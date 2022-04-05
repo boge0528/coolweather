@@ -44,7 +44,7 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_weather_backup);
+        setContentView(R.layout.activity_weather);
 //        初始化控件
         weatherLayout = (ScrollView) findViewById(R.id.weather_layout);
         titleCity = (TextView) findViewById(R.id.title_city);
@@ -77,7 +77,7 @@ public class WeatherActivity extends AppCompatActivity {
 
     /*根据天气id请求天气信息*/
     public void requestWeather(final String weatherId) {
-        String weatherUrl = "http://guolin.tech/api/weather?cityid=" + weatherId + "&key=bc0418b57b2d4918819d3974ac1285d9";
+        String weatherUrl = "http://api.heweather.net/s6/weather?location=" + weatherId + "&key=f0391004c39042f7b46bc12fb56eb7dc";
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
